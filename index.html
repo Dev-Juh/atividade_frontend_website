@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Júlia Oliveira</title>
+    <link rel="stylesheet" href="style.css"
+</head>
+<body>
+    <div class="card">
+        <p id="saudacao"></p>
+        <h1>Olá, eu sou Júlia Oliveira</h1>
+        <img src="img/picture.jpeg" alt="Foto de Júlia Oliveira" width="200">
+        <p>
+            Sou estudante de Engenharia de Software e Análise e Desenvolvimento de Sistemas, tenho interesse em iniciar minha carreira na área de dados e inteligência artificial. Além disso, estou sempre em busca de novos desafios e oportunidades para aprender e crescer na minha carreira.
+        </p>
+        <a href="https://www.linkedin.com/in/juliaoliveira" target="_blank">Meu LinkedIn</a>
+        
+    </div>
+
+    <script>
+        function saudacao() {
+            const hora = new Date().getHours();
+            let mensagem;
+
+            if (hora < 12) {
+                mensagem = "Bom dia! 🌞";
+            } else if (hora < 18) {
+                mensagem = "Boa tarde! 🌤️";
+            } else {
+                mensagem = "Boa noite! 🌙";
+            }
+
+            document.getElementById("saudacao").textContent = mensagem;
+        }
+
+        saudacao();
+    </script>
+</body>
+</html>
