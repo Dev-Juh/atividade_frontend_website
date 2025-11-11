@@ -1,0 +1,115 @@
+$cor-vermelha: #d62300;
+$cor-amarela: #f5b104;
+$cor-marrom: #502314;
+$cor-clara: #fff7e6;
+$cor-texto: #2d1b0e;
+
+@mixin centralizar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+    margin: 0;
+    font-family: "Baloo 2", "Flame", sans-serif;
+    background-color: $cor-clara;
+  }
+
+main {
+  margin-top: 80px;
+  text-align: center;
+  padding: 40px;
+}
+
+.bk-header {
+  @include centralizar;
+  justify-content: space-between;
+  background-color: $cor-vermelha;
+  color: white;
+  padding: 12px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+
+  .logo img {
+    width: 60px;
+  }
+
+  .menu {
+    ul {
+      @include centralizar;
+      list-style: none;
+      gap: 30px;
+
+      li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        position: relative;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $cor-amarela;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: $cor-amarela;
+          transition: width 0.3s;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .pedido {
+    background-color: $cor-amarela;
+    color: $cor-marrom;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+
+    &:hover {
+      background-color: darken($cor-amarela, 10%);
+      transform: scale(1.05);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .bk-header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 20px;
+
+    .menu.ativo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $cor-vermelha;
+      width: 100%;
+    }    
+
+    .pedido {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+}
